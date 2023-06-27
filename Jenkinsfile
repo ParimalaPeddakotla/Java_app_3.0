@@ -107,6 +107,21 @@ pipeline{
                    dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
-        }      
+        } 
+        stage('Publish to Artifactory') {
+            steps {
+                // Publish artifacts to Artifactory
+                rtUpload (
+                    serverId: 'http://18.212.178.47:8082',
+                    spec: '''{
+                        "files": [
+                            {
+                                "pattern": "home/ubuntu/Java_app_3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
+                                "target": "simple-default"
+                            }
+                        ]
+                    }'''
+                )
+            }
     }
 }
