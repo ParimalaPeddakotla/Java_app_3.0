@@ -112,7 +112,7 @@ pipeline{
             steps {
                 // Publish artifacts to Artifactory
                 rtUpload (
-                    serverId: 'http://18.212.178.47:8082',
+                    serverId: '18.212.178.47:8082',
                     spec: '''{
                         "files": [
                             {
@@ -123,5 +123,5 @@ pipeline{
                     }'''
                 )
             }
-    }
+        }
 }
