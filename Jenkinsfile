@@ -113,7 +113,7 @@ pipeline{
             steps {
                 // Publish artifacts to Artifactory
                 rtUpload (
-                    serverId: '18.212.178.47:8082',
+                    serverId: 'Jfrog',
                     spec: '''{
                         "files": [
                             {
