@@ -125,7 +125,6 @@ pipeline{
                 )
                 rtBuildInfo (
                 captureEnv: true
-                deleteBuildArtifacts: true
                 )
             }
         }
