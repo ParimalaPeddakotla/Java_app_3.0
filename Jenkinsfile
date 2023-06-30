@@ -123,6 +123,11 @@ pipeline{
                         ]
                     }'''
                 )
+                rtBuildInfo (
+                captureEnv: true
+                maxBuilds: 5,
+                deleteBuildArtifacts: true
+                )
             }
         }
 }
