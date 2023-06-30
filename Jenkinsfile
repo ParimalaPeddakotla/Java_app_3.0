@@ -108,22 +108,5 @@ pipeline{
                }
             }
         } 
-        stage('Publish to Artifactory') {
-         when { expression {  params.action == 'create' } }
-            steps {
-                // Publish artifacts to Artifactory
-                rtUpload (
-                    serverId: 'Jfrog',
-                    spec: '''{
-                        "files": [
-                            {
-                                "pattern": "home/ubuntu/Java_app_3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
-                                "target": "simple-default"
-                            }
-                        ]
-                    }'''
-                )
-            }
-        }
 }
 }    
