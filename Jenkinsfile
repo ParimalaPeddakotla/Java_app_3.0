@@ -109,6 +109,7 @@ pipeline{
             }
         } 
         stage('Publish to Artifactory') {
+            when { expression {  params.action == 'create' } }
             steps {
                 // Publish artifacts to Artifactory
                 rtUpload (
