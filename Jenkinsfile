@@ -19,7 +19,7 @@ pipeline{
             steps{
             gitCheckout(
                 branch: "main",
-                url: "https://github.com/praveen1994dec/Java_app_3.0.git"
+                url: "https://github.com/ParimalaPeddakotla/Java_app_3.0.git"
             )
             }
         }
@@ -73,7 +73,7 @@ pipeline{
             }
         }
         stage('Docker Image Build'){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'hello' } }
             steps{
                script{
                    
@@ -82,7 +82,7 @@ pipeline{
             }
         }
          stage('Docker Image Scan: trivy '){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'hello' } }
             steps{
                script{
                    
@@ -91,7 +91,7 @@ pipeline{
             }
         }
         stage('Docker Image Push : DockerHub '){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'hello' } }
             steps{
                script{
                    
@@ -100,7 +100,7 @@ pipeline{
             }
         }   
         stage('Docker Image Cleanup : DockerHub '){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'hello' } }
             steps{
                script{
                    
