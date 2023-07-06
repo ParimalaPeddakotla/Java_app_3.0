@@ -108,7 +108,7 @@ pipeline{
                }
             }
         } 
-        stage('Publish to Artifactory') {
+        stage('jfrog') {
             when { expression {  params.action == 'create' } }
             steps {
                 // Publish artifacts to Artifactory
