@@ -73,7 +73,7 @@ pipeline{
             }
         }
         stage('Docker Image Build'){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'hello' } }
             steps{
                script{
                    
@@ -82,7 +82,7 @@ pipeline{
             }
         }
          stage('Docker Image Scan: trivy '){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'hello' } }
             steps{
                script{
                    
@@ -91,7 +91,7 @@ pipeline{
             }
         }
         stage('Docker Image Push : DockerHub '){
-         when { expression {  params.action == 'create' } }
+         when { expression {  params.action == 'rollback' } }
             steps{
                script{
                    
