@@ -123,9 +123,6 @@ pipeline{
                         ]
                     }'''
                 )
-                rtBuildInfo (
-                captureEnv: true
-                )
             }
         }
 }
